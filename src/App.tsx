@@ -19,14 +19,18 @@ function App() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const newTodo: Todo ={
-      inputValue: inputValue,
-      id: todos.length,
-      checked: false,
-    };
-
-    setTodos([newTodo, ...todos]);
-    setInputValue("");
+    if(inputValue === "") {
+      alert("Todoを入力してください。")
+    } else {
+      const newTodo: Todo ={
+        inputValue: inputValue,
+        id: todos.length,
+        checked: false,
+      };
+  
+      setTodos([newTodo, ...todos]);
+      setInputValue("");
+    }
   };
 
   const handleEdit = (id: number, inputValue: string) => {
