@@ -64,6 +64,7 @@ function App() {
           <input
             type="text"
             onChange={(e) => handleChange(e)}
+            value={inputValue}
             className='inputText'
           />
           <input type="submit" value="作成" className="submitButton"/>
